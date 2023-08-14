@@ -1,0 +1,484 @@
+:root {
+  --color-primary: rgb(51, 153, 255);
+  --color-primary-light: #66b3ff;
+  --color-primary-dark: #0080ff;
+  --color-grey-dark-1: rgb(51,51,51);
+  --background-color-1:linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-3);
+  background-image: var(--background-color-1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+@keyframes red-change {
+  0% {
+    color: red;
+    font-size: 3rem;
+  }
+  25% {
+    color: red;
+    font-size: 3rem;
+  }
+  50% {
+    color: red;
+    font-size: 2.5rem;
+  }
+  75% {
+    color: red;
+    font-size: 2rem;
+  }
+  100% {
+    color: var(--color-primary);
+  }
+}
+@keyframes green-change {
+  0% {
+    color: lightgreen;
+    font-size: 3rem;
+  }
+  25% {
+    color: lightgreen;
+    font-size: 3rem;
+  }
+  50% {
+    color: lightgreen;
+    font-size: 2.5rem;
+  }
+  75% {
+    color: lightgreen;
+    font-size: 2rem;
+  }
+  100% {
+    color: var(--color-primary);
+  }
+}
+.colorChange__red {
+  animation: red-change 1s ease-in;
+}
+
+.colorChange__green {
+  animation: green-change 1s ease-in;
+}
+
+.container {
+  width: 80%;
+  height: 80vh;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header {
+  height: 10vh;
+  background-color: var(--color-grey-dark-1);
+  margin-bottom: 1rem;
+  padding: 0rem 5rem 0 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  color: var(--color-primary-dark);
+  font-size: 2.5rem;
+}
+header .rulesLink {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: var(--color-primary-dark);
+}
+header .rulesLink:hover {
+  transform: scale(1.2);
+}
+@media ((max-width: 599px)) {
+  header .rulesLink {
+    font-size: 1.5rem;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1023px)) {
+  header .rulesLink {
+    font-size: 1.5rem;
+  }
+}
+@media ((max-width: 599px)) {
+  header {
+    height: 5vh;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1023px)) {
+  header {
+    height: 5vh;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.main {
+  display: flex;
+  color: var(--color-primary);
+}
+.main__sidebar {
+  width: 20%;
+  background-color: var(--color-grey-dark-1);
+  height: 70vh;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+@media ((max-width: 599px)) {
+  .main__sidebar {
+    font-size: 1rem;
+    width: 40%;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1023px)) {
+  .main__sidebar {
+    font-size: 1.25rem;
+    width: 30%;
+  }
+}
+.main__sidebar form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  align-items: center;
+  margin-bottom: auto;
+}
+.main__sidebar form .option__digits,
+.main__sidebar form .option__time {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.main__sidebar form .option__digits select,
+.main__sidebar form .option__digits option,
+.main__sidebar form .option__time select,
+.main__sidebar form .option__time option {
+  color: var(--color-primary-dark);
+  width: 7rem;
+  text-align: center;
+}
+@media ((max-width: 599px)) {
+  .main__sidebar form .option__digits select,
+  .main__sidebar form .option__digits option,
+  .main__sidebar form .option__time select,
+  .main__sidebar form .option__time option {
+    width: 3rem;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1023px)) {
+  .main__sidebar form .option__digits select,
+  .main__sidebar form .option__digits option,
+  .main__sidebar form .option__time select,
+  .main__sidebar form .option__time option {
+    width: 5rem;
+  }
+}
+.main .scoreBoard {
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+@media ((max-width: 599px)) {
+  .main .scoreBoard {
+    font-size: 1rem;
+    margin-bottom: -5rem;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1023px)) {
+  .main .scoreBoard {
+    font-size: 1.25rem;
+    margin-bottom: -4rem;
+  }
+}
+.main__game {
+  background-color: var(--color-grey-dark-1);
+  height: 70vh;
+  flex-grow: 1;
+}
+
+.main__game {
+  display: flex;
+  flex-direction: column;
+}
+.main__game_number {
+  height: 50%;
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main__game_number_active {
+  width: 25%;
+  margin-bottom: 7rem;
+  height: 10rem;
+  border-width: 0.4rem;
+  border-style: solid;
+  border-image: linear-gradient(to right bottom, #66b3ff, #0080ff) 1;
+  font-size: 5rem;
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media ((max-width: 599px)) {
+  .main__game_number_active {
+    width: 50%;
+    margin-bottom: 4rem;
+    height: 8rem;
+    font-size: 3rem;
+  }
+}
+.main__game_guess {
+  flex-grow: 1;
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main__game_guess input {
+  width: 25%;
+  margin-bottom: 7rem;
+  height: 10rem;
+  border-width: 0.4rem;
+  font-size: 5rem;
+  border-style: solid;
+  border-image: linear-gradient(to right bottom, #66b3ff, #0080ff) 1;
+  background-color: inherit;
+  text-align: center;
+  color: var(--color-primary);
+}
+@media ((max-width: 599px)) {
+  .main__game_guess input {
+    width: 50%;
+    margin-bottom: 4rem;
+    height: 8rem;
+    font-size: 3rem;
+  }
+}
+.main__game_guess input:focus {
+  outline: none;
+}
+.main__game_guess input::-webkit-outer-spin-button,
+.main__game_guess input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main__game_guess input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.btn__one, .btn__two {
+  padding: 1.5rem 3rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+@media ((max-width: 599px)) {
+  .btn__one, .btn__two {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+.btn__one:hover, .btn__two:hover {
+  background-image: var(--background-color-1);
+  box-shadow: 0px 15px 20px rgba(51, 153, 255, 0.4);
+  color: #fff;
+  transform: translateY(-0.7rem);
+}
+.btn__one:focus, .btn__two:focus {
+  background-image: var(--background-color-1);
+  box-shadow: 0px 15px 20px rgba(51, 153, 255, 0.4);
+  color: #fff;
+  transform: translateY(-0.7rem);
+}
+.btn__one:active, .btn__two:active {
+  transform: translateY(0.5rem);
+}
+.btn__one:disabled, .btn__two:disabled {
+  pointer-events: none;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.container__rules {
+  width: 80%;
+  height: 85vh;
+  background-color: var(--color-grey-dark-1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.container__rules .gameLink {
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary-dark);
+  padding: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+.container__rules .gameLink:hover {
+  scale: 1.2;
+}
+@media ((max-width: 599px)) {
+  .container__rules .gameLink {
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1023px)) {
+  .container__rules .gameLink {
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+  }
+}
+
+.correctGuess {
+  display: inherit;
+  flex-direction: row;
+  height: 50%;
+  position: relative;
+}
+.correctGuess h1 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: lightgreen;
+}
+.correctGuess .table_digits,
+.correctGuess .table_time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+.correctGuess .table_digits table,
+.correctGuess .table_time table {
+  height: 30vh;
+  border: 1px solid var(--color-primary);
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.correctGuess .table_digits table caption,
+.correctGuess .table_time table caption {
+  font-weight: bold;
+}
+.correctGuess .table_digits table td,
+.correctGuess .table_time table td {
+  border: 1px solid var(--color-primary);
+}
+
+.wrongGuess {
+  display: inherit;
+  flex-direction: row;
+  height: 50%;
+  position: relative;
+}
+.wrongGuess h1 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: red;
+}
+.wrongGuess .table_digits,
+.wrongGuess .table_time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+.wrongGuess .table_digits table,
+.wrongGuess .table_time table {
+  height: 30vh;
+  border: 1px solid var(--color-primary);
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.wrongGuess .table_digits table caption,
+.wrongGuess .table_time table caption {
+  font-weight: bold;
+}
+.wrongGuess .table_digits table td,
+.wrongGuess .table_time table td {
+  border: 1px solid var(--color-primary);
+}
+
+/*# sourceMappingURL=styles.css.map */

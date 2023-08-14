@@ -1,0 +1,93 @@
+:root{
+  --color-primary: rgb(51, 153, 255);
+  --color-primary-light: #66b3ff;
+  --color-primary-dark: #0080ff;
+
+  --color-grey-dark-1: rgb(51,51,51);
+  --background-color-1:linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 62.5%; 
+}
+
+body{
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-3);
+  background-image: var(--background-color-1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+$mobile: "(max-width: 599px)";
+$tablet: "(min-width: 600px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+
+
+@keyframes red-change {
+  0% { 
+    color: red ;
+    font-size: 3rem;
+    }
+  25% { 
+        color: red;
+        font-size: 3rem;
+    }
+  50% { 
+      color: red;
+      font-size: 2.5rem;
+    }
+  75% { 
+      color: red;
+      font-size: 2rem;
+    }
+  100% { color: var(--color-primary); 
+    }
+}
+
+@keyframes green-change {
+  0% { 
+      color: lightgreen ;
+      font-size: 3rem;
+  }
+  25% { 
+      color: lightgreen;
+      font-size: 3rem;
+  }
+  50% { 
+    color: lightgreen;
+    font-size: 2.5rem;
+  }
+  75% { 
+    color: lightgreen;
+    font-size: 2rem;
+  }
+  100% { color: var(--color-primary); 
+  }
+}
+
+
+.colorChange__red {
+  animation: red-change 1s ease-in;
+}
+
+.colorChange__green {
+  animation: green-change 1s ease-in;
+}
